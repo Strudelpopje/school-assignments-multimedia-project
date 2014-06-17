@@ -1,6 +1,7 @@
 package multimedia.blowballing.app;
 
 import multimedia.blowballing.app.util.SystemUiHider;
+import multimedia.blowballing.app.GameManager;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -113,6 +114,9 @@ public class FullscreenActivity extends Activity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
+        GameManager manager = new GameManager();
+        manager.runLoop();
     }
 
     @Override
